@@ -3,7 +3,9 @@
 }
 
 @model List<DemoBlog.Models.Post>
+<div style="background-image:url(/Content//Content/images.jpg)">
 
+    <img src="~/Content/images.jpg" alt="logo">
 @foreach (var post in Model)
 {
     <div class="row">
@@ -20,4 +22,5 @@
         </div>
     </div>
 }
+    </div>
 

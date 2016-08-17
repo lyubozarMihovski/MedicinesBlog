@@ -9,6 +9,16 @@
 
 </head>
 <body>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="~/Content/unnamed.jpg" alt="logo">
+        </div>
+        <nav>
+            <ul>              
+                    <li>bkjbkk</li>                  
+            </ul>
+        </nav>
+    </aside>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -17,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("SoftUni Blog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Medicines Blog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -29,14 +39,11 @@
             </div>
         </div>
     </div>
-    <div class="navbar-right">
-        <p>Sidebar content</p>
-    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - SoftUni Blog</p>
+            <p>&copy; @DateTime.Now.Year - Medicines Blog</p>
         </footer>
     </div>
 
