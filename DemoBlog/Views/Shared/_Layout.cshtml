@@ -3,22 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - SoftUni Blog</title>
+    <title>@ViewBag.Title - Medicines Blog</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="logo">
-            <img src="~/Content/unnamed.jpg" alt="logo">
-        </div>
-        <nav>
-            <ul>              
-                    <li>bkjbkk</li>                  
-            </ul>
-        </nav>
-    </aside>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -40,8 +31,26 @@
         </div>
     </div>
     <div class="container body-content">
+        @Html.Partial("_Notifications")
         @RenderBody()
         <hr />
+        <div id="sidebar-wrapper">
+            <ul id="sidebar_menu" class="sidebar-nav  style="text-align: right; padding-right: 10px;
+                padding-top: 10px">
+                <li class="sidebar-brand">
+                    <a id="menu-toggle" href="#">
+                        <span id="main_icon" class="navbar-icon fa fa-bars icon">
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#">Start Bootstrap </a></li>
+                <li><a href="#">Home</a> </li>
+                <li><a href="#">About</a> </li>
+                <li><a href="#">Contact</a> </li>
+            </ul>
+        </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - Medicines Blog</p>
         </footer>

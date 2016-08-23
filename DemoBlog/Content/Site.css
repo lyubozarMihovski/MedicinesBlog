@@ -23,10 +23,13 @@ textarea {
     max-width: 280px;
 }
 .post>h2, .post>div{
-    background:#00ff21;
+    background:#4cff00;
     padding: 10px;
     margin: 0;
 }
-.post>h2{
+.post{
     margin-top: 15px;
+}
+.alert{
+    margin-top: 10px;
 }

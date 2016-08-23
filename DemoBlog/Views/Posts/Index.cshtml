@@ -1,9 +1,11 @@
-﻿@model IEnumerable<DemoBlog.Models.Post>
-
+﻿@model PagedList<DemoBlog.Models.Post>
+@using DemoBlog.Classes;
 @{
     ViewBag.Title = "Index";
 }
-
+@using PagedList;
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css"/>
 <h2>Medicines</h2>
 
 <p>
@@ -15,15 +17,17 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                Title
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Body)
+               Body
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                Date
             </th>
-            <th></th>
+            <th>
+                Author
+            </th>
         </tr>
 
         @foreach (var item in Model)
@@ -33,10 +37,20 @@
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Body)
+                    @Utils.CutText(item.Body)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @if (item.Author != null)
+                    {
+                        @item.Author.UserName
+                    }
+                    else
+                    {
+                        @:<i>No Author</i>
+                    }
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
@@ -48,3 +62,8 @@
 
     </table>
     </div>
+<div class="col-sm-10">
+    <div class="center">
+        @Html.PagedListPager((IPagedList)ViewBag.pagedList, page => Url.Action("Index", new { page }))
+    </div>
+</div>
