@@ -22,7 +22,7 @@ namespace DemoBlog.Controllers
         {
             var postWithAuthors = db.Posts.Include(p => p.Author).ToList();
             var pageNumber = page ?? 1; // if no page was specified in the querystring, default to the first page (1)
-            var pagedList = postWithAuthors.ToPagedList(pageNumber, 3); // will only contain 25 products max because of the pageSize
+            var pagedList = postWithAuthors.ToPagedList(pageNumber, 5); // will only contain 25 products max because of the pageSize
 
             ViewBag.pagedList = pagedList;
             return View(pagedList);

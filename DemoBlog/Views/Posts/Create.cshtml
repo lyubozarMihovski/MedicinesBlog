@@ -6,13 +6,12 @@
 
 <h2>Create</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Upload", "LogoController", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Post</h4>
+        <h3>Medicine</h3>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -37,6 +36,23 @@
             </div>
         </div>
     </div>
+    
+    {
+
+        <div class="form-horizontal">
+            <div class="control-group">
+                <label>
+                    Upload A Logo
+                </label>
+                <div class="controls">
+                    <input type="file" name="logo" />
+                </div>
+            </div>
+        </div>
+        <p>
+            <input type="submit" name="Upload" value="Upload" class="button" />
+        </p>
+    }
 }
 
 <div>

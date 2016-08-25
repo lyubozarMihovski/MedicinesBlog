@@ -9,55 +9,47 @@
 
 </head>
 <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Medicines Blog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Posts", "Index", "Posts")</li>
-                    <li>@Html.ActionLink("New Post", "Create", "Posts")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
+    <div id="sidebar-wrapper">
+        <ul id="sidebar_menu" class="sidebar-nav style=" text-align right; padding-right 10px;
+            padding-top 10px"></ul>
+        <ul class="sidebar-nav navbar-right col-md-3" style="border:3px solid">
+            <li><a href="#">Home</a> </li>
+            <li><a href="#">About</a> </li>
+            <li><a href="#">Contact</a> </li>
+        </ul>
     </div>
-    <div class="container body-content">
-        @Html.Partial("_Notifications")
-        @RenderBody()
-        <hr />
-        <div id="sidebar-wrapper">
-            <ul id="sidebar_menu" class="sidebar-nav  style="text-align: right; padding-right: 10px;
-                padding-top: 10px">
-                <li class="sidebar-brand">
-                    <a id="menu-toggle" href="#">
-                        <span id="main_icon" class="navbar-icon fa fa-bars icon">
-                        </span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#">Start Bootstrap </a></li>
-                <li><a href="#">Home</a> </li>
-                <li><a href="#">About</a> </li>
-                <li><a href="#">Contact</a> </li>
-            </ul>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Medicines Blog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Posts", "Index", "Posts")</li>
+                        <li>@Html.ActionLink("New Post", "Create", "Posts")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
         </div>
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Medicines Blog</p>
-        </footer>
+        <div class="container body-content">
+            @Html.Partial("_Notifications")
+            @RenderBody()
+            <hr />
+        
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
+<footer style="text-align:center;text-decoration-color:blue">
+    <p>&copy; @DateTime.Now.Year - Medicines Blog</p>
+</footer>
 </html>

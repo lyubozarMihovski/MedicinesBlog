@@ -107,7 +107,7 @@ namespace DemoBlog.Migrations
                 new UserStore<ApplicationUser>(context));
             userManager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 3,
+                RequiredLength = 1,
                 RequireNonLetterOrDigit = false,
                 RequireDigit = false,
                 RequireLowercase = false,
@@ -163,4 +163,3 @@ namespace DemoBlog.Migrations
         }
     }
 }
-

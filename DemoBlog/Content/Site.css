@@ -33,3 +33,9 @@ textarea {
 .alert{
     margin-top: 10px;
 }
+.sidebar{
+    border:solid 10px;
+    border-color:chocolate;
+
+
+}
