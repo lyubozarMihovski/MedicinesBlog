@@ -135,6 +135,17 @@ namespace DemoBlog.Controllers
             this.AddNotification("Post deleted.", NotificationType.INFO);
             return RedirectToAction("Index");
         }
+       // [HttpPost]
+       // [ValidateAntiForgeryToken]
+       // public ActionResult Upload(string postsImage, HttpPostedFileBase file)
+       // {
+       //     string path = @"/Images/Posts/" + postsImage;
+       //     if (file != null)
+       //     {
+       //         file.SaveAs(path);
+       //     }
+       //     return RedirectToAction("Index");
+       // }
 
         protected override void Dispose(bool disposing)
         {

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Xml.Linq;
 
 namespace DemoBlog.Models
 {
@@ -32,5 +33,9 @@ namespace DemoBlog.Models
         [ForeignKey("Author_Id")]
         public ApplicationUser Author { get; set; }
 
+       // public string PostImage
+       // {
+       //     get { return Title.Replace(" ", string.Empty) + ".jpg"; }
+       // }
     }
 }

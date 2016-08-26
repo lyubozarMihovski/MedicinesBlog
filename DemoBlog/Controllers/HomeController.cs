@@ -18,6 +18,17 @@ namespace DemoBlog.Controllers
             return View(posts.ToList());
            
         }
-            
+        public ActionResult About()
+        {
+            return View();
+        }
+        public ActionResult Users()
+        {
+            var users = db.Users.OrderByDescending(p => p.UserName);
+            return View(users.ToList());
+            //Posts.Include(p => p.Author)
+                //.OrderByDescending(p => p.Date).Take(10);
+           // return View(posts.ToList());
+        }
     }
 }

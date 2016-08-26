@@ -1,0 +1,16 @@
+﻿@model List<DemoBlog.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2>Users</h2>
+
+@foreach (var user in Model)
+{
+    if (user.FullName != null)
+    {
+        <li><i>@user.FullName</i></li>
+    }
+
+}
+
