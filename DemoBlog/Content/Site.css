@@ -1,6 +1,12 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    line-height: 1;
+    font: 16px Lato;
+    color: #565656;
+    background-image: url("Images/Images/images.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -33,9 +39,12 @@ textarea {
 .alert{
     margin-top: 10px;
 }
-.sidebar{
-    border:solid 10px;
-    border-color:red;
-
-
+.sidebar {
+}
+button:hover{
+    background-color:yellow;
+    opacity: 0.75;
+}
+button{
+    opacity: 1;
 }

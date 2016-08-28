@@ -11,9 +11,9 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<div style="background-image:url(/Content//Content/unnamed.jpg)">
+<div>
 
-    <img src="~/Content/unnamed.jpg" alt="logo">
+    <img src="~/Content/Images/unnamed.jpg" alt="logo">
 </div>
     <table class="table">
         <tr>
@@ -38,7 +38,7 @@
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
                 <td>
-                    @Html.Raw(Utils.CutText(item.Body))
+                    @Html.Raw(Utils.CutText(item.Body))  @Html.ActionLink("Read More", "Details", new { Id = item.Id })
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Date)

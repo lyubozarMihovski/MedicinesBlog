@@ -3,16 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/ico" href="~/Images/images.jpg">
     <title>@ViewBag.Title - Medicines Blog</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body background-image: url(<%=ResolveClientUrl("~/Content/Images/background.png")%>
     <div id="sidebar-wrapper">
         <ul id="sidebar_menu" class="sidebar-nav style=" text-align right; padding 10px;
             padding-top 10px"></ul>
-        <ul class="sidebar-nav navbar-right col-md-3" style="border-color: teal;border: 1px solid;background-color:aqua;text-align:center;text-shadow:initial;float:right">
+        <ul class="sidebar-nav navbar-right col-md-3" style="float: right;
+    width: 20%;
+    height: 80%;
+    background-color: #06C0AB;
+    color: white;
+    font: 32px Lato;
+    font-weight: 100;
+    text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: relative;">
             <li>@Html.ActionLink("About", "About", "Home")</li>
             <li>@Html.ActionLink("Users", "Users", "Home")</li>
         </ul>
@@ -41,8 +53,9 @@
         @Html.Partial("_Notifications")
         @RenderBody()
         <hr />
-
+        <p>Total Number of visitors: @ApplicationInstance.Application["Totaluser"]</p>
     </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
