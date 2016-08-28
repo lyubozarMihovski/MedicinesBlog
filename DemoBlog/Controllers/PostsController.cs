@@ -21,8 +21,8 @@ namespace DemoBlog.Controllers
         public ActionResult Index(int? page)
         {
             var postWithAuthors = db.Posts.Include(p => p.Author).ToList();
-            var pageNumber = page ?? 1; // if no page was specified in the querystring, default to the first page (1)
-            var pagedList = postWithAuthors.ToPagedList(pageNumber, 5); // will only contain 25 products max because of the pageSize
+            var pageNumber = page ?? 1; 
+            var pagedList = postWithAuthors.ToPagedList(pageNumber, 5); 
 
             ViewBag.pagedList = pagedList;
             return View(pagedList);
@@ -72,7 +72,7 @@ namespace DemoBlog.Controllers
         }
 
         // GET: Posts/Edit/5
-        [Authorize(Roles ="Administrators")]
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -94,7 +94,7 @@ namespace DemoBlog.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "Id,Title,Body,Author_Id")] Post post)
         {
             if (ModelState.IsValid)
@@ -108,7 +108,7 @@ namespace DemoBlog.Controllers
         }
 
         // GET: Posts/Delete/5
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -126,7 +126,7 @@ namespace DemoBlog.Controllers
         // POST: Posts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Post post = db.Posts.Find(id);
