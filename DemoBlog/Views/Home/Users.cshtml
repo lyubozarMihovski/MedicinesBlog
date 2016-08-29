@@ -7,9 +7,9 @@
 
 @foreach (var user in Model)
 {
-    if (user.FullName != null)
+    if (user.FullName != null && user.UserName != "admin@gmail.com")
     {
-        <li><i>@user.FullName</i></li>
+        <li><i>@user.FullName</i> (@user.UserName)</li>
     }
 
 }

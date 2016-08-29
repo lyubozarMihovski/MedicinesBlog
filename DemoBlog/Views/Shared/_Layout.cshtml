@@ -9,22 +9,17 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body background-image: url(<%=ResolveClientUrl("~/Content/Images/background.png")%>
-    <div id="sidebar-wrapper">
-        <ul id="sidebar_menu" class="sidebar-nav style=" text-align right; padding 10px;
-            padding-top 10px"></ul>
-        <ul class="sidebar-nav navbar-right col-md-3" style="float: right;
+<body>
+    <div>
+        <ul class="pagination col-md-3" style="float: right;
+    padding-top: 40px;
     width: 15%;
     height: 60%;
     background-color: #06C0AB;
-    color: white;
-    font: 32px Lato;
+    font: 25px Lato;
     font-weight: 100;
     text-align: center;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    position: relative;">
+    position: sticky;">
             <li>@Html.ActionLink("About", "About", "Home")</li>
             <li>@Html.ActionLink("Users", "Users", "Home")</li>
         </ul>
