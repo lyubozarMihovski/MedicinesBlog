@@ -3,16 +3,19 @@
 }
 
 @model List<DemoBlog.Models.Post>
-<div style="background-image:url(/Content//Content/Images//images.jpg)">
-
-    <img src="~/Content/Images/images.jpg" alt="logo">
+<div>
+    <a href="~/Content/Images/images.jpg"><img src="~/Content/Images/images.jpg" alt="logo"></a> <a href="~/Content/Images/download.jpg"><img src="~/Content/Images/download.jpg" /></a> <a href="~/Content/Images/unnamed.jpg"><img src="~/Content/Images/unnamed.jpg" /></a> <a href="~/Content/Images/tablets.jpg"><img src="~/Content/Images/tablets.jpg" /></a>
+    <ul class="sidebar col-md-2">
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Users", "Users", "Home")</li>
+    </ul>
 </div>
 
 @foreach (var post in Model)
 {
-    <div class="row">
-        <div class="post col-md-6">
-            <h2 class="title" style="text-align:center;color:black"><a href="Posts/Details/@post.Id">@post.Title</a></h2>
+    <div class="col">
+        <div class="post col-md-4">
+            <h2 style="text-align:center;color:black"><a href="Posts/Details/@post.Id">@post.Title</a></h2>
             <div>
                 Posted on <i>@post.Date</i>
                 @if (post.Author != null)

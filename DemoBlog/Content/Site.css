@@ -31,16 +31,39 @@ textarea {
 }
 .post{
     margin-top: 15px;
+    background-color: aliceblue;
 }
 .alert{
     margin-top: 10px;
 }
 .sidebar {
+    float: right;
+    background-color: #06C0AB;
+    font: 25px Lato;
+    font-weight: 100;
+    text-align: center;
+    text-size-adjust: 200%;
 }
-button:hover{
+.button:hover{
     background-color:yellow;
     opacity: 0.75;
 }
-button{
+.button{
     opacity: 1;
+}
+.pagination{
+    float: none;
+    width: 25%;
+    height: 40%;
+    background-color: #06C0AB;
+    font: 25px Lato;
+    font-weight: 100;
+    text-align: center;
+    position: sticky;
+}
+.table{
+    background-image: url("Images/Images/download.jpg");
+}
+.title{
+    color: Highlight;
 }

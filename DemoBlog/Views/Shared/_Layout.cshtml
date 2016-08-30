@@ -4,26 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/ico" href="~/Images/images.jpg">
-    <title>@ViewBag.Title - Medicines Blog</title>
+    <title class="title">@ViewBag.Title - Medicines Blog</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div>
-        <ul class="pagination col-md-3" style="float: right;
-    padding-top: 40px;
-    width: 15%;
-    height: 60%;
-    background-color: #06C0AB;
-    font: 25px Lato;
-    font-weight: 100;
-    text-align: center;
-    position: sticky;">
-            <li>@Html.ActionLink("About", "About", "Home")</li>
-            <li>@Html.ActionLink("Users", "Users", "Home")</li>
-        </ul>
-    </div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -37,8 +23,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Posts", "Index", "Posts")</li>
-                    <li>@Html.ActionLink("New Post", "Create", "Posts")</li>
+                    <li>@Html.ActionLink("Medicines", "Index", "Posts")</li>
+                    <li>@Html.ActionLink("Create New Medicine", "Create", "Posts")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -48,9 +34,8 @@
         @Html.Partial("_Notifications")
         @RenderBody()
         <hr />
-        <p>Total Number of visitors: @ApplicationInstance.Application["Totaluser"]</p>
     </div>
-
+    <p>Total Number of visitors: @ApplicationInstance.Application["Totaluser"]</p>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
